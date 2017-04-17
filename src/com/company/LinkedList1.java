@@ -55,7 +55,7 @@ public class LinkedList1 {
 
             Node next_node = temp_node.next;
             temp_node.next = new Node(s);
-            temp_node.next = next_node;
+            temp_node.next.next = next_node;
             size++;
         }
 
@@ -131,7 +131,20 @@ public class LinkedList1 {
     }
 
     public String get(int index) {
-        return "";
+        if(size ==0) {
+            throw new IndexOutOfBoundsException();
+        }
+
+        else {
+            Node temp_node = head;
+            while(index !=1) {
+                temp_node = temp_node.next;
+                index--;
+            }
+            return temp_node.node_data;
+        }
+
+
     }
 
 
